@@ -75,9 +75,9 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 // Navigation items with routes
 const navItems = [
-  { name: "Home", path: "/reader/dashboard" },
-  { name: "My Library", path: "../library/dashboard" },
-  { name: "Explore", path: "../Explore/dashboard" },
+  { name: "Home", path: "/publisher/dashboard" },
+  { name: "My Library", path: "/" },
+  { name: "Explore", path: "./" },
 ];
 
 interface HeaderProps {
@@ -140,18 +140,20 @@ export default function Header({ toggleColorMode }: HeaderProps) {
 
   return (
     <Slide appear={false} direction="down" in={!trigger}>
-      <AppBar
-        position="fixed"
-        color="inherit"
-        elevation={isScrolled ? 4 : 0}
-        sx={{
-          bgcolor: isScrolled ? "background.default" : "transparent",
-          transition: theme.transitions.create([
-            "background-color",
-            "box-shadow",
-          ]),
-        }}
-      >
+          <AppBar
+            position="fixed"
+            color="inherit"
+            elevation={isScrolled ? 4 : 0}
+            sx={{
+              bgcolor: "transparent", // Keep the background white
+              color: "white", // Set the font color of the AppBar (text color) to black
+              transition: theme.transitions.create([
+                "background-color",
+                "box-shadow",
+              ]),
+            }}
+          >
+
         <Toolbar>
           {isMobile && (
             <IconButton
